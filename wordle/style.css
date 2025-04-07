@@ -1,0 +1,162 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full height for better centering */
+    background-color: #f0f0f0; /* Light background color */
+}
+
+hr {
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #ccc; /* Subtle border for the line */
+}
+
+#title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #333; /* Darker text color */
+    margin: 20px 0; /* Spacing around title */
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    grid-template-rows: repeat(6, 1fr); /* 6 rows */
+    gap: 5px; /* Space between tiles */
+    width: 90%;
+    max-width: 350px;
+    margin: 20px auto; /* Center the board */
+}
+
+.tile {
+    border: 2px solid lightgray;
+    height: 60px; /* Fixed height */
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+    border-radius: 5px; /* Rounded corners */
+    background-color: white; /* White background for tiles */
+}
+
+.correct {
+    background-color: #6AAA64; /* Green for correct letters */
+    color: white;
+    border-color: #4CAF50; /* Darker green border */
+}
+
+.present {
+    background-color: #C9B458; /* Yellow for present letters */
+    color: white;
+    border-color: #FFA500; /* Darker yellow border */
+}
+
+.absent {
+    background-color: #787C7E; /* Gray for absent letters */
+    color: white;
+    border-color: #555; /* Darker gray border */
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto; /* Center the keyboard */
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0; /* Space between keyboard rows */
+}
+
+.key-tile {
+    width: 40px; /* Fixed width for regular keys */
+    height: 40px; /* Fixed height for keys */
+    margin: 2px;
+    border: 1px solid lightgray;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; /* Rounded corners */
+    background-color: #e0e0e0; /* Light gray background for keys */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth transition */
+}
+
+/* Wider keys for Enter and Backspace */
+.enter-key-tile {
+    width: 80px; /* Wider width for Enter key */
+    border: 1px solid lightgray; /* Border for Enter key */
+    height: 40px; /* Fixed height for keys */
+    margin: 2px;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+     /* Green background for Enter key */
+    color: rgb(43, 39, 39); /* White text for Enter key */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.key-tile.backspace-key {
+    width: 80px; /* Wider width for Backspace key */
+    background-color: #e0e0e0; /* Light gray background for Backspace key */
+}
+
+/* Hover effects */
+.key-tile:hover, .enter-key-tile:hover, .key-tile.backspace-key:hover {
+    background-color: #d0d0d0; /* Darker gray on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 600px) {
+    #title {
+        font-size: 2rem; /* Smaller title font size */
+    }
+
+    .tile {
+        height: 50px; /* Adjust tile size for smaller screens */
+    }
+
+    .key-tile {
+        width: 30px; /* Adjust key size for smaller screens */
+        height: 30px; /* Adjust key size for smaller screens */
+    }
+
+    .key-tile.enter-key,
+    .key-tile.backspace-key {
+        width: 60px; /* Adjust width for Enter and Backspace keys on smaller screens */
+    }
+}
+.key-tile.correct {
+    background-color: #6AAA64 !important; /* Green */
+    color: white;
+    border-color: #4CAF50;
+}
+
+.key-tile.present {
+    background-color: #C9B458 !important; /* Yellow */
+    color: white;
+    border-color: #FFA500;
+}
+
+.key-tile.absent {
+    background-color: #787C7E !important; /* Gray */
+    color: white;
+    border-color: #555;
+}
+.gamemodal{
+    position: fixed;
+    font-weight: bold;
+    display: hide;
+}
